@@ -1,4 +1,5 @@
 .onLoad <- function(libname, pkgname) {
+  message("Loading AI image detector model...")
   reticulate::use_condaenv("imgdet", required = FALSE)
   
   torch        <<- reticulate::import("torch", delay_load = TRUE)
