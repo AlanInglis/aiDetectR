@@ -1,6 +1,6 @@
 Package: aiImageDetect
 Title: AI versus Human Image Detector
-Version: 0.0.0.9000
+Version: 0.0.1
 Authors@R: person("Alan", "Inglis", email = "alan.n.inglis@gmail.com", role = c("aut", "cre"))
 Description: Provides a wrapper around a vision transformer fine-tuned to
     distinguish AI-generated from photographic images.  The package bridges R to
