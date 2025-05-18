@@ -1,4 +1,4 @@
-#' Set up the Python environment for aiImageDetect
+#' Set up the Python environment for aiDetectR
 #'
 #' This installs the required Python packages into a named conda environment ("imgdet").
 #' Run this once after installing the package.
@@ -16,7 +16,7 @@ setup_imgdet_env <- function(env = "imgdet", python_version = "3.11") {
     reticulate::conda_create(env, packages = paste0("python=", python_version))
   }
   
-  req_file <- system.file("requirements.txt", package = "aiImageDetect")
+  req_file <- system.file("requirements.txt", package = "aiDetectR")
   if (!file.exists(req_file)) {
     stop("requirements.txt not found in inst/. Is the package installed correctly?")
   }

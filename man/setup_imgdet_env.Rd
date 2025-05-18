@@ -2,7 +2,7 @@
 % Please edit documentation in R/setup_imgdet_env.R
 \name{setup_imgdet_env}
 \alias{setup_imgdet_env}
-\title{Set up the Python environment for aiImageDetect}
+\title{Set up the Python environment for aiDetectR}
 \usage{
 setup_imgdet_env(env = "imgdet", python_version = "3.11")
 }

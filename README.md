@@ -1,15 +1,15 @@
-# aiImageDetect <img src="man/figures/logo.png" align="right" height="110"/>
+# aiDetectR <img src="man/figures/logo.png" align="right" height="110"/>
 
 *AI-vs-Human image checker for R*
 
 ## What it does
 
-`aiImageDetect` classifies any JPEG or PNG as **AI-generated** or **photographic**.
+`aiDetectR` classifies any JPEG or PNG as **AI-generated** or **photographic**.
 It wraps an open-source Vision Transformer fine-tuned on 120 k balanced images
 covering Midjourney, Stable Diffusion, DALL·E and real photos.
 
 ```r
-library(aiImageDetect)
+library(aiDetectR)
 
 setup_imgdet_env()          # one-off (≈ 3 min)
 detect_ai_image("cats.jpg")
@@ -24,7 +24,7 @@ detect_ai_image("cats.jpg")
 
 ```r
 install.packages("remotes")        # if not already installed
-remotes::install_github("alaninglis/aiImageDetect")
+remotes::install_github("alaninglis/aiDetectR")
 ```
 
 ### 2. Install Python dependencies
@@ -39,7 +39,7 @@ and `pillow`. It uses **reticulate** to manage a clean Python environment.
 Once conda is available, set up the environment:
 
 ```r
-library(aiImageDetect)
+library(aiDetectR)
 setup_imgdet_env()   # creates conda env 'imgdet' and installs required packages
 ```
 

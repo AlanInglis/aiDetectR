@@ -1,4 +1,4 @@
-Package: aiImageDetect
+Package: aiDetectR
 Title: AI versus Human Image Detector
 Version: 0.0.1
 Authors@R: person("Alan", "Inglis", email = "alan.n.inglis@gmail.com", role = c("aut", "cre"))
