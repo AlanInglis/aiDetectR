@@ -67,7 +67,8 @@ CPU inference < 0.5 s per image; Apple GPU ≈ 40 ms.
 
 ## Citation
 
-The weights originate from **Ateeq A.** *AI vs Human Image Detector*
+The weights originate from **Ateeq A.** *AI vs Human Image Detector*, found at: 
+https://huggingface.co/Ateeqq/ai-vs-human-image-detector
 (Hugging Face model `Ateeqq/ai-vs-human-image-detector`, 2024, Apache-2.0).
 
 
