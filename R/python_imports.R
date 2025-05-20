@@ -12,26 +12,27 @@ device       <- NULL
 
 
 load_py_model <- function() {
-  if (!is.null(model)) return(invisible())             # already loaded
+  if (!is.null(model)) return(invisible())
   
-  # ── ensure required wheels are present ─────────────────────────────
+  # ── install missing Python packages ───────────────────────────────
   if (!reticulate::py_module_available("torch")) {
     reticulate::py_install(
       packages = c(
         "numpy==1.26.4",
-        "torch==2.2.2",
+        "torch==2.2.2+cpu",
         "torchvision",
         "torchaudio",
         "transformers",
         "pillow",
         "accelerate"
       ),
-      method   = "auto",   # uses the same mini-Python reticulate just downloaded
-      pip      = TRUE
+      method            = "auto",
+      pip               = TRUE,
+      pip_install_opts  = "--extra-index-url https://download.pytorch.org/whl/cpu"
     )
   }
   
-  # ── now safe to import ─────────────────────────────────────────────
+  # ── now import safely ───────────────────────────────────────────────
   torch        <<- reticulate::import("torch")
   transformers <<- reticulate::import("transformers")
   PIL_Image    <<- reticulate::import("PIL.Image")
