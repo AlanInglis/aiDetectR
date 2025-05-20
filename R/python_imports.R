@@ -1,4 +1,16 @@
 # R/python_imports.R
+utils::globalVariables(c("torch", "transformers", "PIL_Image",
+                         "hf_model", "processor", "model", "device"))
+
+torch        <- NULL
+transformers <- NULL
+PIL_Image    <- NULL
+hf_model     <- NULL
+processor    <- NULL
+model        <- NULL
+device       <- NULL
+
+
 load_py_model <- function() {
   if (!is.null(model)) return(invisible())             # already loaded
   
