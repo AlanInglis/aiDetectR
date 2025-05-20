@@ -26,7 +26,7 @@
 .onLoad <- function(libname, pkgname) {
   ## Point reticulate at the env name you intend to use at runtime.
   ## Do NOT import Python or load the model here.
-  reticulate::use_virtualenv("imgdet", required = FALSE)
+ # reticulate::use_virtualenv("imgdet", required = FALSE)
   
   packageStartupMessage(
     "aiDetectR ready – Python model will load on first use."
