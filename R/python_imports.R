@@ -1,20 +1,25 @@
 # R/python_imports.R
-
-utils::globalVariables(c(
-  "torch", "transformers", "PIL_Image",
-  "processor", "model", "device"
-))
-
-torch        <- NULL
-transformers <- NULL
-PIL_Image    <- NULL
-processor    <- NULL
-model        <- NULL
-device       <- NULL
-
 load_py_model <- function() {
-  if (!is.null(model)) return(invisible())  # already loaded
+  if (!is.null(model)) return(invisible())             # already loaded
   
+  # ── ensure required wheels are present ─────────────────────────────
+  if (!reticulate::py_module_available("torch")) {
+    reticulate::py_install(
+      packages = c(
+        "numpy==1.26.4",
+        "torch==2.2.2",
+        "torchvision",
+        "torchaudio",
+        "transformers",
+        "pillow",
+        "accelerate"
+      ),
+      method   = "auto",   # uses the same mini-Python reticulate just downloaded
+      pip      = TRUE
+    )
+  }
+  
+  # ── now safe to import ─────────────────────────────────────────────
   torch        <<- reticulate::import("torch")
   transformers <<- reticulate::import("transformers")
   PIL_Image    <<- reticulate::import("PIL.Image")
